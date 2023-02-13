@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Challenge App</title>
+    <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+    <div class="container">
+        <div id="myModal" class="modal">
+            <div class="modalContent">
+              <span class="close">&times;</span>
+            </div>
+        </div>
+        <div class="menu">
+            <input type="text" id="countryFilter" placeholder="Country">
+            <button id="btnFilter" onclick="filterByCountry()">Filter</button>
+        </div>
+        <div class="tableBody" style="overflow-x: auto;">
+            <table id="elementTable">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Thumbnail</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
