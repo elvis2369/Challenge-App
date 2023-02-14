@@ -24,13 +24,10 @@ window.onload = async function api_request(e){
         info.push(data.results[0])
         createRow(data.results[0], i)
     }
-    console.log(info);
-    
 }
 
 function showImage(imageId, bigPicture){
     document.getElementById(imageId).addEventListener('click',function(){
-        console.log(modalContent.children)
         if(modalContent.children.length > 1){
             const oldImage = modalContent.children[1]
             modalContent.removeChild(oldImage)
@@ -38,7 +35,6 @@ function showImage(imageId, bigPicture){
         modalContent.appendChild(bigPicture)
     })
 }
-console.log(tableTab.rows)
 
 function filterByCountry(){
     var inputText = document.getElementById('countryFilter').value
