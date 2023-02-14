@@ -17,7 +17,7 @@ span.onclick = function() {
     }
   }
 window.onload = async function api_request(e){
-    for(let i=0;i<50;i++)
+    for(let i=0;i<10;i++)
     {   
         const response = await fetch(url_api)
         var data = await response.json();
@@ -151,36 +151,24 @@ function search(){
 
     }
 
-  function Sort()
+  function sortElement()
   {
-    var inputText = document.getElementById('countryFilter').value
     let sortedValues = []
-    let unsortedValues = []
-    if(inputText === ''){
-        recreateInitialTable();
-        return
+    for(let j=0;j<info.length;j++)
+    {
+        sortedValues.push(info[j])
     }
-    else{
-        for(let el=0; el<info.length; el++){
-            if(inputText === info[el].location.country){
-                sortedValues.push(info[el])
-            }
-            else{
-                unsortedValues.push(info[el])
-            }
-        }
-        while(tableTab.rows.length > 1) {
-            tableTab.deleteRow(1)
-        }
-        console.log(sortedValues)
-        
-        for(let j=0; j<unsortedValues.length;j++){
-            createRow(unsortedValues[j], j)
-        }
+    sortedValues = sortedValues.sort((a, b) => {
+        return a.location.country.localeCompare(b.location.country);
+    });
 
-        for(let i=0; i<sortedValues.length;i++){
-            createRow(sortedValues[i], i)
-        }
+    while(tableTab.rows.length > 1) {
+        tableTab.deleteRow(1)
     }
+    for(let i=0; i<sortedValues.length;i++)
+    {
+        createRow(sortedValues[i], i)
+    }
+
   }
-  
+
