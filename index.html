@@ -5,7 +5,7 @@
 </head>
 <body>
     <div class="container">
-        <div id="myModal" class="modal">
+        <div id="modalId" class="modal">
             <div class="modalContent">
               <span class="close">&times;</span>
             </div>
@@ -13,6 +13,11 @@
         <div class="menu">
             <input type="text" id="countryFilter" placeholder="Country">
             <button id="btnFilter" onclick="filterByCountry()">Filter</button>
+            <button id="btnSort" onclick="Sort()">Sort</button>
+        </div>
+        <div class="searchText">
+            <input type="text" id="searchByWord" placeholder="Search...">
+            <button id="btnSearch" onclick="search()">Search</button>
         </div>
         <div class="tableBody" style="overflow-x: auto;">
             <table id="elementTable">
