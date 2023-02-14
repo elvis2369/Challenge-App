@@ -17,7 +17,7 @@ span.onclick = function() {
     }
   }
 window.onload = async function api_request(e){
-    for(let i=0;i<10;i++)
+    for(let i=0;i<250;i++)
     {   
         const response = await fetch(url_api)
         var data = await response.json();
